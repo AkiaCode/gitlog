@@ -32,8 +32,15 @@ public class Gitlog {
                 break;
             }
 
-            gitLogs.setLog(log[0], log[1], log[2], log[3], new Integer(log[4]), log[5], log[6], log[7]);
-            System.out.println("\nPrevHash: " + gitLogs.getPrevHash() + "\nHash: " + gitLogs.getHash() + "\nName: " + gitLogs.getName() + "\nEmail: " + gitLogs.getEmail() + "\nTime: " + gitLogs.getTime() + "\nTimeZone: " + gitLogs.getTimeZone() + "\nAction: " + gitLogs.getAction() + "\nMessage: " + gitLogs.getMessage());
+            org.catry.gitlog.log.setLog(log[0], log[1], log[2], log[3], new Integer(log[4]), log[5], log[6], log[7]);
+            System.out.println("\nPrevHash: " + org.catry.gitlog.log.getPrevHash() +
+                    "\nHash: " + org.catry.gitlog.log.getHash() +
+                    "\nName: " + org.catry.gitlog.log.getName() +
+                    "\nEmail: " + org.catry.gitlog.log.getEmail() +
+                    "\nTime: " + org.catry.gitlog.log.getTime() +
+                    "\nTimeZone: " + org.catry.gitlog.log.getTimeZone() +
+                    "\nAction: " + org.catry.gitlog.log.getAction() +
+                    "\nMessage: " + org.catry.gitlog.log.getMessage());
         }
     }
 }

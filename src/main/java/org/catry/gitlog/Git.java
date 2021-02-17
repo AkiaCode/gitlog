@@ -88,7 +88,7 @@ public class Git {
         lines.close();
 
         for (String log: logs) {
-            gitLogs.setLog(log.split(" ")[0],
+            org.catry.gitlog.log.setLog(log.split(" ")[0],
                     log.split(" ")[1],
                     log.split(" ")[2],
                     log.split(" ")[3],
@@ -98,14 +98,14 @@ public class Git {
                     log.split(": ")[1].trim());
 
             String[] GitLog = {
-                    gitLogs.getPrevHash(),
-                    gitLogs.getHash(),
-                    gitLogs.getName(),
-                    gitLogs.getEmail(),
-                    String.valueOf(gitLogs.getTime()),
-                    gitLogs.getTimeZone(),
-                    gitLogs.getAction(),
-                    gitLogs.getMessage()
+                    org.catry.gitlog.log.getPrevHash(),
+                    org.catry.gitlog.log.getHash(),
+                    org.catry.gitlog.log.getName(),
+                    org.catry.gitlog.log.getEmail(),
+                    String.valueOf(org.catry.gitlog.log.getTime()),
+                    org.catry.gitlog.log.getTimeZone(),
+                    org.catry.gitlog.log.getAction(),
+                    org.catry.gitlog.log.getMessage()
             };
 
             map.add(GitLog);

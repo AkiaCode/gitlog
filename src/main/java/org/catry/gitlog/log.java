@@ -1,13 +1,13 @@
 package org.catry.gitlog;
 
 /**
- * @package GitLogs.java
+ * @package log.java
  * @author Catry
  * @version 1.0
  * Git logs
  */
 
-public class gitLogs {
+public class log {
 
     private static String prevHash = new String(); // 0000000000000000000000000000000000000000
     private static String hash = new String(); // 24c0c155733950c71feb7546b63fa85a50dc61ca
