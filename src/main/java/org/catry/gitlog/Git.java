@@ -72,7 +72,7 @@ public class Git {
         List<String[]> map = new ArrayList<>();
 
         if (!LogFolder.exists() && !LogFile.exists()) {
-            if (Error == -1) {
+            if (Error != -1) {
                 map.add(new String[] { "Your current branch '" + FindRepoCurrentBranchName(workspace, repoName) + "' does not have any commits yet" });
             } else {
                 map.add(new String[] { FindRepoCurrentBranchName(workspace, repoName) });
