@@ -1,5 +1,5 @@
 # gitlog
-A program that shows git logs to a website
+A program that shows git logs to a rest api
 
 ## Config
 * Config File Name: application.properties
