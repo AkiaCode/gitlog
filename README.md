@@ -2,18 +2,15 @@
 A program that shows git logs to a website
 
 ## Config
-* config.properties
+* Config File Name: application.properties
 ```
-workspace=C:\\Users\\{USERNAME}\\source\\repos
-web=False
-api=True
+workspace={PATH}
 port=80
 ```
-#### web
-Default Website (default port: 8080)
-
-#### api
-Rest Api (default port: 80)
-
 #### port
 Web Port (default: 8080)
+
+### API LIST
+* /api/repos
+* /api/branch?repo={REPO-NAME}
+* /api/logs?repo={REPO-NAME}
