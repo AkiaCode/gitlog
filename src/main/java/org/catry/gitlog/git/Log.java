@@ -1,4 +1,4 @@
-package org.catry.gitlog;
+package org.catry.gitlog.git;
 
 /**
  * @package log.java
@@ -7,13 +7,13 @@ package org.catry.gitlog;
  * Git logs
  */
 
-public class log {
+public class Log {
 
     private static String prevHash = new String(); // 0000000000000000000000000000000000000000
     private static String hash = new String(); // 24c0c155733950c71feb7546b63fa85a50dc61ca
     private static String name = new String(); // Akiacode
     private static String email = new String(); // <catry.me@gmail.com>
-    private static int time = new Integer(0); // 1613178827
+    private static int time = 0; // 1613178827
     private static String timeZone = new String(); // +0900
     private static String action = new String(); // clone
     private static String message = new String(); // from https://github.com/AkiaCode/boba.git

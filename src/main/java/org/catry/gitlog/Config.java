@@ -18,7 +18,7 @@ public class Config {
      * @return String
      */
     public static String getConfig (String config) throws  IOException {
-        String resource = "./config.properties";
+        String resource = "./application.properties";
 
         Properties properties = new Properties();
         InputStream input = new FileInputStream(resource);

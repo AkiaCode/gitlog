@@ -1,4 +1,4 @@
-package org.catry.gitlog;
+package org.catry.gitlog.git;
 
 import java.io.File;
 import java.io.IOException;
@@ -66,16 +66,17 @@ public class Git {
      * @param workspace, repoName
      * @return List<String[]>
      */
-    public static List<String[]> FindRepoLogs (String workspace, String repoName) throws IOException {
+	public static List<String[]> FindRepoLogs (String workspace, String repoName) throws IOException {
         File LogFolder = new File(workspace + "/" + repoName + "/.git/logs");
         File LogFile = new File(workspace + "/" + repoName + "/.git/logs/HEAD");
         List<String[]> map = new ArrayList<>();
 
         if (!LogFolder.exists() && !LogFile.exists()) {
+        	String branchName = FindRepoCurrentBranchName(workspace, repoName);
             if (Error != -1) {
-                map.add(new String[] { "Your current branch '" + FindRepoCurrentBranchName(workspace, repoName) + "' does not have any commits yet" });
+                map.add(new String[] { "Your current branch '" + branchName + "' does not have any commits yet" });
             } else {
-                map.add(new String[] { FindRepoCurrentBranchName(workspace, repoName) });
+                map.add(new String[] { branchName });
             }
             return map;
         }
@@ -88,24 +89,24 @@ public class Git {
         lines.close();
 
         for (String log: logs) {
-            org.catry.gitlog.log.setLog(log.split(" ")[0],
+        	org.catry.gitlog.git.Log.setLog(log.split(" ")[0],
                     log.split(" ")[1],
                     log.split(" ")[2],
                     log.split(" ")[3],
-                    new Integer(log.split(" ")[4]),
+                   new Integer(log.split(" ")[4]),
                     log.substring(123, 128),
                     log.substring(129).split(":")[0],
                     log.split(": ")[1].trim());
 
             String[] GitLog = {
-                    org.catry.gitlog.log.getPrevHash(),
-                    org.catry.gitlog.log.getHash(),
-                    org.catry.gitlog.log.getName(),
-                    org.catry.gitlog.log.getEmail(),
-                    String.valueOf(org.catry.gitlog.log.getTime()),
-                    org.catry.gitlog.log.getTimeZone(),
-                    org.catry.gitlog.log.getAction(),
-                    org.catry.gitlog.log.getMessage()
+                    org.catry.gitlog.git.Log.getPrevHash(),
+                    org.catry.gitlog.git.Log.getHash(),
+                    org.catry.gitlog.git.Log.getName(),
+                    org.catry.gitlog.git.Log.getEmail(),
+                    String.valueOf(org.catry.gitlog.git.Log.getTime()),
+                    org.catry.gitlog.git.Log.getTimeZone(),
+                    org.catry.gitlog.git.Log.getAction(),
+                    org.catry.gitlog.git.Log.getMessage()
             };
 
             map.add(GitLog);
